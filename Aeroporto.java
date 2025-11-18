@@ -1,28 +1,39 @@
-import javax.swing.JOptionPane;
+// import java.util.ArrayList;
+// import java.util.List;
+// import javax.swing.JOptionPane;
 
 public class Aeroporto {
-    private String nome;
-    // Aqui deveria usar uma lista, por exemplo, mas vamos usar um erro
-    private Passageiro[] passageiros;
+    private String nomeAeroporto;
+    private int capacidade;
 
-    public Aeroporto(String nome, int capacidade) {
-        this.nome = nome;
-        passageiros = new Passageiro[capacidade]; // Pode gerar erro se capacidade < 0
+    public Aeroporto(String nomeAeroporto, int capacidade) {
+        this.nomeAeroporto = nomeAeroporto;
+        this.capacidade = capacidade;
     }
 
-    public void adicionarPassageiro(Passageiro p, int index) {
-        if (index >= 0 && index < passageiros.length) {
-            passageiros[index] = p; // Pode gerar erro se index inválido
-        } else {
-            JOptionPane.showMessageDialog(null, "Índice inválido");
-        }
+    public String getNomeAeroporto() {
+        return nomeAeroporto;
     }
 
-    public String listarPassageiros() {
+    public void setNomeAeroporto(String nomeAeroporto) {
+        this.nomeAeroporto = nomeAeroporto;
+    }
+
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <= passageiros.length; i++) { // erro de lógica: erro de índice (i <= length)
-            sb.append(passageiros[i]).append("\n");
-        }
+        sb.append("Aeroporto{");
+        sb.append("nomeAeroporto=").append(nomeAeroporto);
+        sb.append(", capacidade=").append(capacidade);
+        sb.append('}');
         return sb.toString();
     }
 }
