@@ -1,15 +1,20 @@
+
+
 public class Passageiro {
     private String nome;
     private String voo;
+    private int assento;
 
     // Construtor
-    public Passageiro(String nome, String voo) {
+    public Passageiro(String nome, String voo, int assento) {
         this.nome = nome;
         this.voo = voo;
+        this.assento = assento;
+        
     }
 
-    // Getters e Setters com erro (falta de acento ou erro de digitação)
-    public String getNome() {
+    // Getters e Setters com erro (falta de acento ou erro de digitação) 
+        public String getNome() {
         return nome;
     }
 
@@ -25,8 +30,16 @@ public class Passageiro {
         this.voo = voo;
     }
 
+    public int getAssento() {
+        return assento;
+    }
+
+    public void setAssento(int assento) {
+        this.assento = assento;
+    }
+    
     @Override
     public String toString() {
-        return "Passageiro: " + nome + ", Voo: " + voo;
+        return "Passageiro: " + getNome() + ", Voo: " + getVoo() + ", Assento: " + getAssento() ;
     }
 }
